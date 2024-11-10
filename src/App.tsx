@@ -1,10 +1,13 @@
 import React from "react";
+import { MantineProvider, Box, Text } from "@mantine/core";
 
 function App() {
   return (
-    <div className="App">
-      <div>hello</div>
-    </div>
+    <MantineProvider>
+      <Box>
+        <Text>Mantine added</Text>
+      </Box>
+    </MantineProvider>
   );
 }
 

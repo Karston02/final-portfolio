@@ -6,3 +6,12 @@ export const mq = {
   customRange: (width: number, widthTwo?: number) =>
     `${mediaTag} (min-width: ${width}px) and (max-width: ${widthTwo}px)`,
 };
+
+// for reference
+export const colors = {
+  gray: "#C6D5D4",
+  black: "#1B1F21",
+  violet: "#716DA8",
+  pink: "#EFB0C0",
+  blue: "#81C3D7",
+};

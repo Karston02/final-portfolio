@@ -22,10 +22,10 @@ export function Navbar() {
   return (
     <Box className="header">
       <Container className="container">
-        <div className="logo">
-          <IconHome size={24} />
-          <Text>KK</Text>
-        </div>
+        <Box className="logo">
+          <IconHome size={50} />
+          <Text className="icon-text">KK</Text>
+        </Box>
 
         {/* Desktop Links */}
         <Group className="links">
@@ -45,10 +45,10 @@ export function Navbar() {
 
         {/* Mobile Burger Menu */}
         <div className="burgerMenu">
-          <Burger opened={opened} onClick={toggle} size="sm" />
+          <Burger opened={opened} onClick={toggle} size="sm" color="#c6d5d4" />
           <Menu position="bottom-end" opened={opened} onClose={toggle}>
-            <Menu.Dropdown>
-              <Menu.Item component="a" href="home">
+            <Menu.Dropdown className="mobile-menu">
+              <Menu.Item component="a" href="/">
                 <IconHome size={18} /> Home
               </Menu.Item>
               <Menu.Item component="a" href="about">

@@ -21,17 +21,14 @@ export function Navbar() {
 
   return (
     <Box className="header">
-      {" "}
-      <Container>
+      <Container className="container">
         <div className="logo">
-          {" "}
           <IconHome size={24} />
           <Text>KK</Text>
         </div>
 
         {/* Desktop Links */}
         <Group className="links">
-          {" "}
           <UnstyledButton component="a" href="#home">
             Home
           </UnstyledButton>
@@ -46,26 +43,26 @@ export function Navbar() {
           </UnstyledButton>
         </Group>
 
-        {/* Mobile Menu */}
-        <Menu position="bottom-end" opened={opened} onClose={toggle}>
-          <Menu.Target>
-            <Burger opened={opened} onClick={toggle} size="sm" />
-          </Menu.Target>
-          <Menu.Dropdown>
-            <Menu.Item component="a" href="#home">
-              <IconHome size={18} /> Home
-            </Menu.Item>
-            <Menu.Item component="a" href="#about">
-              <IconUser size={18} /> About
-            </Menu.Item>
-            <Menu.Item component="a" href="#projects">
-              <IconBriefcase size={18} /> Projects
-            </Menu.Item>
-            <Menu.Item component="a" href="#contact">
-              <IconMail size={18} /> Contact
-            </Menu.Item>
-          </Menu.Dropdown>
-        </Menu>
+        {/* Mobile Burger Menu */}
+        <div className="burgerMenu">
+          <Burger opened={opened} onClick={toggle} size="sm" />
+          <Menu position="bottom-end" opened={opened} onClose={toggle}>
+            <Menu.Dropdown>
+              <Menu.Item component="a" href="#home">
+                <IconHome size={18} /> Home
+              </Menu.Item>
+              <Menu.Item component="a" href="#about">
+                <IconUser size={18} /> About
+              </Menu.Item>
+              <Menu.Item component="a" href="#projects">
+                <IconBriefcase size={18} /> Projects
+              </Menu.Item>
+              <Menu.Item component="a" href="#contact">
+                <IconMail size={18} /> Contact
+              </Menu.Item>
+            </Menu.Dropdown>
+          </Menu>
+        </div>
       </Container>
     </Box>
   );

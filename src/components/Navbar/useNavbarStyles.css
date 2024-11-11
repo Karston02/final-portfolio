@@ -5,6 +5,13 @@
   padding: 8px 16px;
 }
 
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
 .logo {
   display: flex;
   align-items: center;
@@ -14,26 +21,15 @@
 .links {
   display: flex;
   gap: 16px;
-}
-
-@media (max-width: 991px) {
-  .links {
+  margin-left: auto;
+  @media screen and (max-width: 991px) {
     display: none;
   }
 }
 
-.mobileMenu {
+.burgerMenu {
   display: none;
-}
-
-@media (max-width: 991px) {
-  .mobileMenu {
+  @media (max-width: 991px) {
     display: block;
   }
-}
-
-.menuButton {
-  display: flex;
-  align-items: center;
-  gap: 8px;
 }

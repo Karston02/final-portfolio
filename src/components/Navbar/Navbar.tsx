@@ -29,16 +29,16 @@ export function Navbar() {
 
         {/* Desktop Links */}
         <Group className="links">
-          <UnstyledButton component="a" href="#home">
+          <UnstyledButton className="nav-link" component="a" href="/">
             Home
           </UnstyledButton>
-          <UnstyledButton component="a" href="#about">
+          <UnstyledButton className="nav-link" component="a" href="about">
             About
           </UnstyledButton>
-          <UnstyledButton component="a" href="#projects">
+          <UnstyledButton className="nav-link" component="a" href="projects">
             Projects
           </UnstyledButton>
-          <UnstyledButton component="a" href="#contact">
+          <UnstyledButton className="nav-link" component="a" href="contact">
             Contact
           </UnstyledButton>
         </Group>
@@ -48,16 +48,16 @@ export function Navbar() {
           <Burger opened={opened} onClick={toggle} size="sm" />
           <Menu position="bottom-end" opened={opened} onClose={toggle}>
             <Menu.Dropdown>
-              <Menu.Item component="a" href="#home">
+              <Menu.Item component="a" href="home">
                 <IconHome size={18} /> Home
               </Menu.Item>
-              <Menu.Item component="a" href="#about">
+              <Menu.Item component="a" href="about">
                 <IconUser size={18} /> About
               </Menu.Item>
-              <Menu.Item component="a" href="#projects">
+              <Menu.Item component="a" href="projects">
                 <IconBriefcase size={18} /> Projects
               </Menu.Item>
-              <Menu.Item component="a" href="#contact">
+              <Menu.Item component="a" href="contact">
                 <IconMail size={18} /> Contact
               </Menu.Item>
             </Menu.Dropdown>

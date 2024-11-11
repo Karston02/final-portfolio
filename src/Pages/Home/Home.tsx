@@ -1,5 +1,11 @@
-import React from "react";
+import { Navbar } from "../../components";
+import { Box, Text } from "@mantine/core";
 
 export function Home() {
-  return <div>Home</div>;
+  return (
+    <Box>
+      <Navbar />
+      <Text>Home</Text>
+    </Box>
+  );
 }

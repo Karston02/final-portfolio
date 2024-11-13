@@ -1,13 +1,13 @@
+import { useEffect } from "react";
 import {
   Box,
   Container,
   Group,
-  Burger,
   Menu,
   UnstyledButton,
   Text,
 } from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
+import { useDisclosure, useMediaQuery } from "@mantine/hooks";
 import {
   IconHome,
   IconUser,
@@ -18,6 +18,15 @@ import "./useNavbarStyles.css";
 
 export function Navbar() {
   const [opened, { toggle }] = useDisclosure(false);
+
+  // detect screen size change for mobile vs desktop
+  const isMobile = useMediaQuery("(max-width: 991px)");
+
+  useEffect(() => {
+    if (!isMobile) {
+      if (opened) toggle(); // close the burger menu when switching to desktop view regardless
+    }
+  }, [isMobile, opened, toggle]);
 
   return (
     <Box className="header">
@@ -44,20 +53,36 @@ export function Navbar() {
         </Group>
 
         {/* Mobile Burger Menu */}
-        <div className="burgerMenu">
-          <Burger opened={opened} onClick={toggle} size="sm" color="#c6d5d4" />
-          <Menu position="bottom-end" opened={opened} onClose={toggle}>
+        <div className="burgerMenu" onClick={toggle}>
+          <div className={`burger-icon ${opened ? "opened" : ""}`}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <Menu opened={opened} onClose={toggle} position="bottom-end">
             <Menu.Dropdown className="mobile-menu">
-              <Menu.Item component="a" href="/">
+              <Menu.Item component="a" className="mobile-menu-item" href="/">
                 <IconHome size={18} /> Home
               </Menu.Item>
-              <Menu.Item component="a" href="about">
+              <Menu.Item
+                component="a"
+                className="mobile-menu-item"
+                href="about"
+              >
                 <IconUser size={18} /> About
               </Menu.Item>
-              <Menu.Item component="a" href="projects">
+              <Menu.Item
+                component="a"
+                className="mobile-menu-item"
+                href="projects"
+              >
                 <IconBriefcase size={18} /> Projects
               </Menu.Item>
-              <Menu.Item component="a" href="contact">
+              <Menu.Item
+                component="a"
+                className="mobile-menu-item"
+                href="contact"
+              >
                 <IconMail size={18} /> Contact
               </Menu.Item>
             </Menu.Dropdown>

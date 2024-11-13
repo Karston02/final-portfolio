@@ -5,10 +5,13 @@
   padding: 16px 32px;
   background-color: #1b1f21;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 10;
+  width: 100%;
+  max-width: 100%;
+  z-index: 1000;
   transition: background-color 0.3s ease;
+  box-sizing: border-box; /* include padding in the width calculation */
 }
 
 .container {
@@ -16,6 +19,9 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  max-width: 100%; /* prevent overflow beyond the full width */
+  padding: 0 16px;
+  box-sizing: border-box;
 }
 
 .logo {
@@ -74,9 +80,11 @@
   transform: scale(1);
 }
 
-/* Burger Menu */
+/* custom Burger Icon */
 .burgerMenu {
   display: none;
+  position: relative;
+  z-index: 1100;
 }
 
 @media (max-width: 991px) {
@@ -85,7 +93,38 @@
   }
 
   .burgerMenu {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1100;
+  }
+
+  .burger-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 24px;
+    height: 24px;
+  }
+
+  .burger-icon span {
     display: block;
+    height: 2px;
+    width: 100%;
+    background-color: #ffffff;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .burger-icon.opened span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .burger-icon.opened span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .burger-icon.opened span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
   }
 
   .burgerMenu .mantine-Menu-item {
@@ -96,5 +135,15 @@
   .burgerMenu .mantine-Menu-item:hover {
     background-color: #716da8;
     color: #ffffff;
+  }
+
+  .mobile-menu {
+    background-color: #1b1f21;
+    box-sizing: border-box;
+    width: 100% !important; /* override the element max-content default width */
+    margin-top: 60px;
+  }
+  .mobile-menu-item {
+    text-align: center;
   }
 }

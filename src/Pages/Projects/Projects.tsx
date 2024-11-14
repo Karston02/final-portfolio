@@ -1,3 +1,12 @@
+import React from "react";
+import { Navbar } from "../../components";
+import { Box, Text } from "@mantine/core";
+
 export function Projects() {
-  return <div>Projects</div>;
+  return (
+    <Box>
+      <Navbar />
+      <Text>Projects</Text>
+    </Box>
+  );
 }

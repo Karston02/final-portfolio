@@ -29,6 +29,7 @@
   align-items: center;
   gap: 8px;
   color: #c6d5d4;
+  cursor: pointer;
 }
 
 .icon-text {

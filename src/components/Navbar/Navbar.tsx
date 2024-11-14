@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Box,
   Container,
@@ -18,6 +19,7 @@ import "./useNavbarStyles.css";
 
 export function Navbar() {
   const [opened, { toggle }] = useDisclosure(false);
+  const navigate = useNavigate();
 
   // detect screen size change for mobile vs desktop
   const isMobile = useMediaQuery("(max-width: 991px)");
@@ -31,7 +33,7 @@ export function Navbar() {
   return (
     <Box className="header">
       <Container className="container">
-        <Box className="logo">
+        <Box className="logo" onClick={() => navigate("/")}>
           <IconHome size={50} />
           <Text className="icon-text">KK</Text>
         </Box>

@@ -1,0 +1,50 @@
+.hero-container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: 80px; /* Always here for navbar */
+  background: red;
+  text-align: center;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.greeting-text {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.waving-hand {
+  animation-name: wave-animation;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  transform-origin: 70% 70%;
+  display: inline-block;
+}
+
+@keyframes wave-animation {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  20%,
+  60% {
+    transform: rotate(25deg);
+  }
+  40%,
+  80% {
+    transform: rotate(-25deg);
+  }
+}
+
+.subtitle-text {
+  font-size: 1.5rem;
+  color: #fff;
+}

@@ -16,6 +16,7 @@ const ThreeScene = () => {
   const mountRef = useRef(null);
 
   useEffect(() => {
+    const mountNode = mountRef.current;
     let width = window.innerWidth;
     let height = window.innerHeight;
 
@@ -97,8 +98,7 @@ const ThreeScene = () => {
     animate();
 
     return () => {
-      window.removeEventListener("resize", onWindowResize);
-      mountRef.current.removeChild(renderer.domElement);
+      mountNode.removeChild(renderer.domElement);
     };
   }, []);
 

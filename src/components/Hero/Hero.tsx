@@ -3,10 +3,37 @@ import { Loader } from "../../components";
 import { Box, Text } from "@mantine/core";
 import "./useHeroStyles.css";
 import { Canvas } from "@react-three/fiber";
-import { PerspectiveCamera, OrbitControls } from "@react-three/drei";
-import Room from "./Room/Room";
+import { PerspectiveCamera } from "@react-three/drei";
+import { Room } from "./Room/Room";
+import { Leva } from "leva";
+import { useMediaQuery } from "react-responsive";
+import { HeroCamera } from "./HeroCamera";
+
+export const calculateSizes = (
+  isSmall: boolean,
+  isMobile: boolean,
+  isTablet: boolean
+) => {
+  return {
+    deskScale: isSmall ? 0.05 : isMobile ? 0.06 : 0.065,
+    deskPosition: isMobile ? [0.5, -4.5, 0] : [0.25, -5.5, 0],
+    targetPosition: isSmall
+      ? [-5, -10, -10]
+      : isMobile
+      ? [-9, -10, -10]
+      : isTablet
+      ? [-11, -7, -10]
+      : [-13, -13, -10],
+  };
+};
 
 export function Hero() {
+  const isSmall = useMediaQuery({ maxWidth: 440 });
+  const isMobile = useMediaQuery({ maxWidth: 768 });
+  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
+
+  const sizes = calculateSizes(isSmall, isMobile, isTablet);
+
   return (
     <Box className="hero-container">
       <Box className="hero-content">
@@ -18,13 +45,22 @@ export function Hero() {
         </Text>
       </Box>
       <Box className="canvas-container">
-        <Canvas className="canvas">
+        <Leva />
+        <Canvas className="w-full h-full">
           <Suspense fallback={<Loader />}>
-            <PerspectiveCamera makeDefault position={[0, 10, 10]} />
-            <Room scale={0.8} position={[0, 0, 0]} rotation={[0, 270, 0]} />
+            <Leva hidden />
+            <PerspectiveCamera makeDefault position={[0, 0, 30]} />
+
+            <HeroCamera isMobile={isMobile}>
+              <Room
+                scale={sizes.deskScale}
+                position={sizes.deskPosition}
+                rotation={[0.1, -Math.PI, 0]}
+              />
+            </HeroCamera>
+
             <ambientLight intensity={1} />
             <directionalLight position={[10, 10, 10]} intensity={0.5} />
-            <OrbitControls enableZoom={true} />
           </Suspense>
         </Canvas>
       </Box>

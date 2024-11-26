@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { Loader } from "../../components";
-import { Box, Text } from "@mantine/core";
+import { Box, Button, Text } from "@mantine/core";
 import "./useHeroStyles.css";
 import { Canvas } from "@react-three/fiber";
 import { PerspectiveCamera } from "@react-three/drei";
@@ -44,6 +44,14 @@ export function Hero() {
           Engineering software that powers progress
         </Text>
       </Box>
+      <Button
+        className="resume-button"
+        radius="md"
+        size="lg"
+        onClick={() => window.open("/Kuciemba, Karston - Resume.pdf", "_blank")}
+      >
+        Resume
+      </Button>
       <Box className="canvas-container">
         <Leva />
         <Canvas className="canvas">

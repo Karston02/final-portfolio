@@ -45,6 +45,27 @@
   }
 }
 
+.resume-button {
+  position: absolute;
+  top: 50%;
+  right: 25%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .resume-button {
+    position: static;
+    margin: 20px auto 0;
+    display: block;
+    transform: none; /* Remove translate to avoid misalignment */
+    text-align: center;
+  }
+}
+
 .subtitle-text {
   font-size: 1.5rem;
   color: #fff;

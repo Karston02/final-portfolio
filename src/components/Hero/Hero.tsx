@@ -16,7 +16,7 @@ export const calculateSizes = (
 ) => {
   return {
     deskScale: isSmall ? 0.05 : isMobile ? 0.06 : 0.065,
-    deskPosition: isMobile ? [0.5, -4.5, 0] : [0.25, -5.5, 0],
+    deskPosition: isMobile ? [0.5, -4.5, 0] : [-2.5, -5.5, 0],
     targetPosition: isSmall
       ? [-5, -10, -10]
       : isMobile
@@ -29,8 +29,8 @@ export const calculateSizes = (
 
 export function Hero() {
   const isSmall = useMediaQuery({ maxWidth: 440 });
-  const isMobile = useMediaQuery({ maxWidth: 768 });
-  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
+  const isMobile = useMediaQuery({ maxWidth: 991 });
+  const isTablet = useMediaQuery({ minWidth: 991, maxWidth: 1024 });
 
   const sizes = calculateSizes(isSmall, isMobile, isTablet);
 
@@ -46,7 +46,7 @@ export function Hero() {
       </Box>
       <Box className="canvas-container">
         <Leva />
-        <Canvas className="w-full h-full">
+        <Canvas className="canvas">
           <Suspense fallback={<Loader />}>
             <Leva hidden />
             <PerspectiveCamera makeDefault position={[0, 0, 30]} />

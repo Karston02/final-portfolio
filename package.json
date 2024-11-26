@@ -19,6 +19,7 @@
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "dayjs": "^1.11.13",
+    "embla-carousel-autoplay": "^8.5.1",
     "embla-carousel-react": "^7.1.0",
     "leva": "^0.9.35",
     "lil-gui": "^0.20.0",

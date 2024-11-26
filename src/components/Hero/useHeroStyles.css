@@ -49,11 +49,22 @@
   position: absolute;
   top: 50%;
   right: 25%;
-  transform: translateY(-50%);
   z-index: 10;
-  background-color: #007bff;
+  background-color: #716da8;
   color: #fff;
   cursor: pointer;
+  padding: 16px 32px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 50px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.resume-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #efb0c0;
 }
 
 @media (max-width: 768px) {
@@ -61,7 +72,7 @@
     position: static;
     margin: 20px auto 0;
     display: block;
-    transform: none; /* Remove translate to avoid misalignment */
+    transform: none;
     text-align: center;
   }
 }

@@ -47,7 +47,7 @@ export function Hero() {
       <Button
         className="resume-button"
         radius="md"
-        size="lg"
+        size="xl"
         onClick={() => window.open("/Kuciemba, Karston - Resume.pdf", "_blank")}
       >
         Resume

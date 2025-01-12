@@ -1,6 +1,13 @@
-import { Box } from "@mantine/core";
+import { Box, Text } from "@mantine/core";
 import "./useHeaderStyles.css";
+import "../../assets/header-background.svg";
 
 export function Header() {
-  return <Box className="header-container">Header</Box>;
+  return (
+    <Box className="header-container">
+      <Box>
+        <Text>hello</Text>
+      </Box>
+    </Box>
+  );
 }

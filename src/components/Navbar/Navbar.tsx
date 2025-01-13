@@ -94,5 +94,3 @@ export function Navbar() {
     </Box>
   );
 }
-
-export default Navbar;

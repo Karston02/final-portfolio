@@ -17,6 +17,7 @@ import {
 } from "@tabler/icons-react";
 import "./useNavbarStyles.css";
 
+// TODO: Change so it goes to certain spot of the page rather than new route
 export function Navbar() {
   const [opened, { toggle }] = useDisclosure(false);
   const navigate = useNavigate();

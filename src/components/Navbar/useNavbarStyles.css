@@ -45,9 +45,9 @@
 
 .links .nav-link,
 .mobile-menu .mantine-Menu-item {
-  color: #878e99;
+  color: #3c3e41;
   font-size: 1.8rem;
-  font-weight: 700;
+  font-weight: 600;
   padding: 8px 12px;
   text-decoration: none;
   position: relative;
@@ -56,7 +56,7 @@
 
 .links .nav-link:hover,
 .mobile-menu .mantine-Menu-item:hover {
-  color: #878e99;
+  color: #6496e6;
 }
 
 .links .nav-link::before,

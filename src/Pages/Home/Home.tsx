@@ -1,4 +1,4 @@
-import { Navbar, Header } from "../../components";
+import { Navbar, Header, Carousel } from "../../components";
 import { Box } from "@mantine/core";
 
 export function Home() {
@@ -6,6 +6,7 @@ export function Home() {
     <Box>
       <Navbar />
       <Header />
+      <Carousel />
     </Box>
   );
 }

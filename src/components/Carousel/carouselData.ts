@@ -1,12 +1,20 @@
 export const slides = [
   {
-    thumbnail: "https://placehold.co/600x400",
-    gitHubUrl: "https://github.com",
+    title: "Algorithm Visualizer",
+    thumbnail: "/algo-visualizer-thumbnail.png",
+    gitHubUrl: "https://github.com/Karston02/algo-visualizer",
     demoVideo: "https://www.youtube.com",
   },
   {
-    thumbnail: "https://placehold.co/600x400",
-    gitHubUrl: "https://github.com",
+    title: "HTTP Proxy",
+    thumbnail: "/http-proxy-thumbnail.png",
+    gitHubUrl: "https://github.com/Karston02", // change
+    demoVideo: "https://www.youtube.com",
+  },
+  {
+    title: "Pharma Profit Analysis",
+    thumbnail: "/pharma-profit-thumbnail.png",
+    gitHubUrl: "https://github.com/Karston02/pharma-profit-analysis",
     demoVideo: "https://www.youtube.com",
   },
 ];

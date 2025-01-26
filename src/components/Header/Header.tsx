@@ -1,4 +1,5 @@
-import { Box, Text, Grid, Button, Image } from "@mantine/core";
+import { Box, Text, Grid, Image } from "@mantine/core";
+import { StyledButton } from "../../components";
 import "./useHeaderStyles.css";
 
 export function Header() {
@@ -18,15 +19,8 @@ export function Header() {
             real-world problems, with experience in full-stack development,
             algorithm visualization, and web design.
           </Text>
-          <Button
-            className="header-btn"
-            variant="outline"
-            size="md"
-            component="a"
-            href="google.com"
-          >
-            Resume
-          </Button>
+          {/* TODO: change to resume */}
+          <StyledButton text="Resume" size="md" href="google.com" />
         </Grid.Col>
         {/* Right Column for Image */}
         <Grid.Col

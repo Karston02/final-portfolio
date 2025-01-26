@@ -71,9 +71,7 @@ export function Carousel() {
               disabled={!slides[currentIndex].demoVideo}
               className="carousel-button"
             >
-              {slides[currentIndex].demoVideo
-                ? "Demo Video"
-                : "No Demo Available"}
+              Demo Video
             </Button>
           </Box>
         </Box>

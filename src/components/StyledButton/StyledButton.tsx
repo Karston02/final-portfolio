@@ -6,6 +6,7 @@ interface StyledButtonProps {
   text: string;
   size: "xs" | "sm" | "md" | "lg" | "xl";
   href: string;
+  disabled?: boolean;
 }
 
 export function StyledButton(props: StyledButtonProps) {
@@ -17,6 +18,7 @@ export function StyledButton(props: StyledButtonProps) {
       size={size}
       component="a"
       href={href}
+      disabled={props.disabled}
     >
       {text}
     </Button>

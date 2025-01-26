@@ -37,13 +37,6 @@
   z-index: 10;
 }
 
-.carousel-button {
-  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
-  color: white;
-  border-radius: 0.3rem;
-  padding: 0.5rem 1rem;
-}
-
 .arrow {
   position: absolute;
   top: 50%;

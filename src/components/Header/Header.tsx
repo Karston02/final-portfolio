@@ -8,9 +8,11 @@ export function Header() {
         {/* Left Column for Text Content */}
         <Grid.Col md={6} sm={12} className="header-content">
           <Text className="header-title">
-            Hi, I'm <span className="highlight">Karston Kuciemba</span> <br />{" "}
+            Hi, I'm <span className="highlight">Karston&nbsp;Kuciemba</span>{" "}
+            <br />
             <span className="highlight">a </span>Software Engineer
           </Text>
+          {/* TODO: Change This Description. It's terrible */}
           <Text className="header-description">
             I am a passionate software engineer building innovative solutions to
             real-world problems, with experience in full-stack development,

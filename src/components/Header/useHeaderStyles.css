@@ -6,8 +6,9 @@
   margin: 0 auto;
 }
 
+/* change font size to be responsive */
 .header-title {
-  font-size: 36px;
+  font-size: 3em;
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 16px;

@@ -70,4 +70,7 @@
   .hero-image {
     width: 50%;
   }
+  .header-btn {
+    margin-top: 20px;
+  }
 }

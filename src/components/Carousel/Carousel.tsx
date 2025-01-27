@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Box, Image, Button, Title } from "@mantine/core";
+import { Box, Image, Title } from "@mantine/core";
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 import { slides } from "./carouselData";
+import { StyledButton } from "../../components";
 import "./useCarouselStyles.css";
 
 export function Carousel() {
@@ -35,7 +36,7 @@ export function Carousel() {
           className="arrow arrow-left"
           onClick={handlePrev}
         />
-        {/* Previous slide */}
+        {/* Previous slide
         <Box className="inactive-slide prev-slide">
           <Image
             src={slides[getPrevIndex(currentIndex)].thumbnail}
@@ -43,6 +44,7 @@ export function Carousel() {
             className="carousel-image"
           />
         </Box>
+        */}
         {/* Current slide */}
         <Box className="carousel-slide">
           <Title>{slides[currentIndex].title}</Title>
@@ -52,30 +54,20 @@ export function Carousel() {
             className="carousel-image"
           />
           <Box className="button-container">
-            {/* GitHub button */}
-            <Button
-              component="a"
+            <StyledButton
+              text="Code"
               href={slides[currentIndex].gitHubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="carousel-button"
-            >
-              Source Code
-            </Button>
-            {/* Demo video button */}
-            <Button
-              component="a"
-              href={slides[currentIndex].demoVideo || "#"}
-              target="_blank"
-              rel="noopener noreferrer"
+              size="md"
+            />
+            <StyledButton
+              text="Demo"
+              href={slides[currentIndex].demoVideo}
+              size="md"
               disabled={!slides[currentIndex].demoVideo}
-              className="carousel-button"
-            >
-              Demo Video
-            </Button>
+            />
           </Box>
         </Box>
-        {/* Next slide */}
+        {/* Next slide 
         <Box className="inactive-slide next-slide">
           <Image
             src={slides[getNextIndex(currentIndex)].thumbnail}
@@ -83,6 +75,7 @@ export function Carousel() {
             className="carousel-image"
           />
         </Box>
+        */}
         {/* Right arrow */}
         <BsArrowRightCircleFill
           className="arrow arrow-right"
